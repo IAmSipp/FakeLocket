@@ -54,13 +54,24 @@ $friends_result = $stmt->get_result();
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- FRIEND LISTS -->
-            <div class="d-flex overflow-auto bg-dark text-light p-2 rounded">
-                <ul class="list-group list-group-horizontal flex-row">
-                    <?php while ($friend = $friends_result->fetch_assoc()): ?>
-                        <li class="list-group-item bg-secondary text-light flex-shrink-0 rounded mx-2"><?php echo htmlspecialchars($friend['username']); ?></li>
-                    <?php endwhile; ?>
-                </ul>
-            </div>
+            <?php
+            $has_friends = $friends_result->num_rows > 0;
+            ?>
+            <?php if ($has_friends): ?>
+                <div class="d-flex overflow-auto bg-dark text-light p-2 rounded">
+                    <ul class="list-group list-group-horizontal flex-row">
+                        <?php while ($friend = $friends_result->fetch_assoc()): ?>
+                            <li class="list-group-item bg-secondary text-light flex-shrink-0 rounded mx-2">
+                                <?php echo htmlspecialchars($friend['username']); ?>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                </div>
+            <?php else: ?>
+                <div class="d-flex overflow-auto bg-dark text-light p-2 rounded">
+                    <span>No Friends?🤣</span>
+                </div>
+            <?php endif; ?>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
