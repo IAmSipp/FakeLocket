@@ -96,6 +96,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
         </div>
     </div>
 
+    <footer class="py-4 bg-secondary text-light mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Team Members</h5>
+                    <ul class="list-unstyled">
+                        <li>นายไชยวัฒน์ มิตรานนท์ 610-02</li>
+                        <li>นางสาวพิมพ์ชนก สุขนุ่ม 610-33</li>
+                        <li>นางสาววรณัน บุหงาเกษมสุข 610-32</li>
+                        <li>นางสาวสิรินดา อยู่เมฆ 610-35</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="text-center py-3">
+                <small>&copy; 2024 Nugget. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
